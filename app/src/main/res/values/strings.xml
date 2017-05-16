@@ -3,4 +3,14 @@
     <string name="login">ลงชื่อใช้งาน</string>
     <string name="user">User :</string>
     <string name="password">Password :</string>
+    <string name="new_register">New Register</string>
+    <string name="name">Name : </string>
+
+    <string name="title_HaveSpace">มีช่องว่าง</string>
+    <string name="message_HaveSpace">กรุณากรอกทุกช่อง</string>
+    <string name="title_UserFalse">User Fail</string>
+    <string name="message_UserFalse">No User in Database</string>
+    <string name="title_PasswordFailse">Password Fail</string>
+    <string name="message_PasswordFalse">No Password in Database</string>
+
 </resources>
