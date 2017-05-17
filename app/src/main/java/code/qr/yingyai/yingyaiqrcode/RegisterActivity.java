@@ -2,10 +2,12 @@ package code.qr.yingyai.yingyaiqrcode;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import static code.qr.yingyai.yingyaiqrcode.R.id.btnBack;
 import static code.qr.yingyai.yingyaiqrcode.R.id.btnNewRegis;
@@ -75,9 +77,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         getResources().getString(R.string.message_HaveSpace));
             } else {
                 //No Space
+                uploadValueToServer();
 
             }
 
+        }
+
+    }
+
+    private void uploadValueToServer() {
+
+        try {
+
+            PostData postData = new PostData(this);
+            postData.execute(nameString, userString, passwordString);
+            String strResult = postData.get();
+            Log.d("17MayV1", "Result ==> " + strResult);
+
+            if (Boolean.parseBoolean(strResult)) {
+                finish();
+            } else {
+                Toast.makeText(RegisterActivity.this,"Cannot upload value", Toast.LENGTH_SHORT).show();
+
+            }
+
+        } catch (Exception e) {
+            Log.d("17MayV1", "e upload ==> " + e.toString());
         }
 
     }
