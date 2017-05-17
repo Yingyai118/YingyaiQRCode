@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             GetData getData = new GetData(this);
             MyConstant myConstant = new MyConstant();
-            getData.execute(myConstant.getUrlPostUser());
+            getData.execute(myConstant.getUrlGetUser());
             String stringJSON = getData.get();
             Log.d("17MayV2", "JSON ==>" + stringJSON);
 
